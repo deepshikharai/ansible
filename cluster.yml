@@ -1,0 +1,18 @@
+- hosts: localhost
+  tasks:
+    - name: run shell script
+      shell: |
+              #!/bin/bash
+              cd /home/drai96005/demoterraform
+              ls
+              terraform init
+              terraform plan
+              terraform apply -auto-approve
+              gcloud container clusters get-credentials pcluster --zone us-west1-a --project ordinal-link-214805
+              cd ..
+              #git clone https://github.com/pramila-git/sele-hub-yaml.git
+              ls
+              kubectl version
+              kubectl --kubeconfig=/home/drai96005/.kube/config apply -f sele-hub-yaml
+              cd demoterrform
+              terraform destroy -auto-approve
