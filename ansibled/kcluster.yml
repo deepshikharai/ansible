@@ -1,0 +1,8 @@
+---
+- name: cluster-formation
+  hosts: localhost
+  become: yes
+  roles:
+    - terra
+    - sele
+    - testcase
